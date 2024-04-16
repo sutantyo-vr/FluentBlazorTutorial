@@ -1,0 +1,69 @@
+﻿@using FluentBlazorTutorial.Model
+@using Microsoft.EntityFrameworkCore.Query.Internal
+@using FluentBlazorTutorial.Data
+@using System.Collections
+
+@page "/datagrid"
+
+@rendermode InteractiveServer
+
+<h1>DataGrid</h1>
+
+@if (_players == null)
+{
+	<p>
+		<em>Loading...</em>
+	</p>
+}
+else
+{
+	<FluentDataGrid Id="playergrid"
+	                Items="@_players"
+	                ResizableColumns="true"
+	                TGridItem="Player">
+		<PropertyColumn Title="Name"
+		                Property="@(x => x!.Name)"
+		                Sortable="true"
+		                Align="Align.Start"/>
+		<PropertyColumn Title="Country"
+		                Property="@(x => x!.Country)"
+		                Sortable="true"
+		                Align="Align.Start"/>
+		@for (var i = 0; i < 4; i++)
+		{
+			int round = i;	// Copy the loop variable to avoid closure issues
+			<PropertyColumn Title=@($"Round {round + 1}")
+			                Property="@(x => (x!.Placement[round] == null) ? "N/A" : x!.Placement[round].ToString())"
+			                Sortable="true"
+			                Comparer="@(new CustomComparer())"
+			                Align="Align.Start"/>
+		}
+	</FluentDataGrid>
+}
+
+@code {
+
+	public IQueryable<Player>? _players;
+
+	protected override async Task OnInitializedAsync()
+	{
+		_players = SampleData.Players.AsQueryable();
+	}
+
+
+	public class CustomComparer : IComparer<string?>
+	{
+		public int Compare(string? x, string? y)
+		{
+			var xValue = int.TryParse(x, out var xVal) ? xVal: int.MaxValue;
+			var yValue = int.TryParse(y, out var yVal) ? yVal: int.MaxValue;
+			
+			var val = Comparer<int>.Default.Compare(xValue, yValue);
+			return Comparer<int>.Default.Compare(xValue, yValue);
+		}
+	}
+	
+
+
+}
+
