@@ -1,0 +1,55 @@
+@page "/popover"
+
+@rendermode InteractiveServer
+
+
+<div style="display: flex; width:100%">
+  <FluentButton id="myPopoverButtonl" Appearance="Appearance.Accent" @onclick="@(() => _visible["left"] = !_visible["left"])">
+    Open Callout 1
+  </FluentButton>
+
+  <FluentSpacer/>
+
+  <FluentButton id="myPopoverButtonr" Appearance="Appearance.Accent" @onclick="@(() => Open("right"))">
+    Open Callout 2
+  </FluentButton>
+
+  <FluentPopover Style="width: 300px;" VerticalThreshold="170" AnchorId="myPopoverButtonl" @bind-Open="@(_visible["left"])">
+    <Header>Callout Header</Header>
+    <Body>
+    <FluentStack Orientation="Orientation.Vertical">
+      <FluentCheckbox>Item 1</FluentCheckbox>
+      <FluentCheckbox>Item 2</FluentCheckbox>
+      <FluentTextField tabindex="0"></FluentTextField>
+    </FluentStack>
+    </Body>
+    <Footer>Callout Footer</Footer>
+  </FluentPopover>
+
+  <FluentPopover Style="width: 300px;" VerticalThreshold="170" AnchorId="myPopoverButtonr" @bind-Open="@(_visible["right"])">
+    <Header>Callout Header</Header>
+    <Body>
+    Callout Body
+    </Body>
+    <Footer>Callout Footer</Footer>
+  </FluentPopover>
+</div>
+
+@code {
+  Dictionary<string, bool> _visible = new();
+
+  protected override Task OnInitializedAsync()
+  {
+    _visible["left"] = false;
+    _visible["right"] = false;
+    
+    return Task.CompletedTask;
+  }
+
+  private void Open(string key)
+  {
+    Console.WriteLine(key);
+    _visible[key] = !_visible[key];
+  }
+
+}
