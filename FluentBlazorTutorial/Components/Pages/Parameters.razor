@@ -1,0 +1,16 @@
+@page "/parameters"
+@using FluentBlazorTutorial.Components.SubComponents
+
+<h3>Parameters</h3>
+
+In parent component: @_collapseStatus
+
+<FluentSwitch CheckedMessage="Collapse" UncheckedMessage="Split" @bind-Value="_collapseStatus"/>
+
+<ParametersChildComponentA @bind-CollapseStatus=_collapseStatus/>
+<ParametersChildComponentB @bind-CollapseStatus=_collapseStatus/>
+
+@code {
+  private bool _collapseStatus { get; set; } = true;
+  
+}

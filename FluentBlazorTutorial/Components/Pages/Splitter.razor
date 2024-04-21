@@ -3,66 +3,82 @@
 @rendermode InteractiveServer
 
 <FluentSwitch CheckedMessage="Collapse" UncheckedMessage="Split" @bind-Value="_collapse"/>
-<FluentSwitch CheckedMessage="Collapse" UncheckedMessage="Split" @bind-Value="_collapse"/>
+
+Value of _collapse is @_collapse
+
+<p>Collapse is @_collapse</p>
 <br/>
 <br/>
 
 <h3>Splitter</h3>
 
-<FluentSplitter Orientation="Orientation.Vertical" Collapsed="_collapse"
-                Style="color:#b32121"
-                Panel1Size="50%"
-                Panel2Size="50%">
-	<Panel1>
-		<div>
-			<p>
-				Panel 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				Eget dolor morbi non arcu risus quis varius. Turpis tincidunt id aliquet risus feugiat in ante. Eros donec ac odio tempor orci
-				dapibus ultrices in iaculis. Sit amet justo donec enim diam vulputate ut. Morbi blandit cursus risus at ultrices mi tempus. Sed
-				ullamcorper morbi tincidunt ornare massa eget egestas. Mi eget mauris pharetra et ultrices neque. Sit amet porttitor eget dolor
-				morbi non arcu risus quis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Diam vel quam elementum pulvinar. Enim
-				nulla aliquet porttitor lacus luctus accumsan. Convallis tellus id interdum velit laoreet id donec ultrices. Dui faucibus in ornare
-				quam viverra orci sagittis.
+<div id="splitter-container" style="background-color:yellow">
+	<FluentSplitter Orientation="Orientation.Vertical" Collapsed="Collapse"
+	                BarSize="20"
+	                Style="color:#b32121;height:80vh"
+	                Panel1Size="50%"
+	                Panel2Size="50%"> 
+		<Panel1>
+			<div>
+				<p>
+					Panel 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Eget dolor morbi non arcu risus quis varius. Turpis tincidunt id aliquet risus feugiat in ante. Eros donec ac odio tempor orci
+					dapibus ultrices in iaculis. Sit amet justo donec enim diam vulputate ut. Morbi blandit cursus risus at ultrices mi tempus. Sed
+					ullamcorper morbi tincidunt ornare massa eget egestas. Mi eget mauris pharetra et ultrices neque. Sit amet porttitor eget dolor
+					morbi non arcu risus quis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Diam vel quam elementum pulvinar. Enim
+					nulla aliquet porttitor lacus luctus accumsan. Convallis tellus id interdum velit laoreet id donec ultrices. Dui faucibus in ornare
+					quam viverra orci sagittis.
+				</p>
+				<br />
+
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Eget dolor morbi non arcu risus quis varius. Turpis tincidunt id aliquet risus feugiat in ante. Eros donec ac odio tempor orci
+					dapibus ultrices in iaculis. Sit amet justo donec enim diam vulputate ut. Morbi blandit cursus risus at ultrices mi tempus. Sed
+					ullamcorper morbi tincidunt ornare massa eget egestas. Mi eget mauris pharetra et ultrices neque. Sit amet porttitor eget dolor
+					morbi non arcu risus quis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Diam vel quam elementum pulvinar. Enim
+					nulla aliquet porttitor lacus luctus accumsan. Convallis tellus id interdum velit laoreet id donec ultrices. Dui faucibus in ornare
+					quam viverra orci sagittis.
+				</p>
+				<br />
+
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Eget dolor morbi non arcu risus quis varius. Turpis tincidunt id aliquet risus feugiat in ante. Eros donec ac odio tempor orci
+					dapibus ultrices in iaculis. Sit amet justo donec enim diam vulputate ut. Morbi blandit cursus risus at ultrices mi tempus. Sed
+					ullamcorper morbi tincidunt ornare massa eget egestas. Mi eget mauris pharetra et ultrices neque. Sit amet porttitor eget dolor
+					morbi non arcu risus quis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Diam vel quam elementum pulvinar. Enim
+					nulla aliquet porttitor lacus luctus accumsan. Convallis tellus id interdum velit laoreet id donec ultrices. Dui faucibus in ornare
+					quam viverra orci sagittis.
+				</p>
+				<br />
 				
+				<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      	Eget dolor morbi non arcu risus quis varius. Turpis tincidunt id aliquet risus feugiat in ante. Eros donec ac odio tempor orci
-        dapibus ultrices in iaculis. Sit amet justo donec enim diam vulputate ut. Morbi blandit cursus risus at ultrices mi tempus. Sed
-        ullamcorper morbi tincidunt ornare massa eget egestas. Mi eget mauris pharetra et ultrices neque. Sit amet porttitor eget dolor
-        morbi non arcu risus quis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Diam vel quam elementum pulvinar. Enim
-        nulla aliquet porttitor lacus luctus accumsan. Convallis tellus id interdum velit laoreet id donec ultrices. Dui faucibus in ornare
-				quam viverra orci sagittis.
-				
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      	Eget dolor morbi non arcu risus quis varius. Turpis tincidunt id aliquet risus feugiat in ante. Eros donec ac odio tempor orci
-        dapibus ultrices in iaculis. Sit amet justo donec enim diam vulputate ut. Morbi blandit cursus risus at ultrices mi tempus. Sed
-        ullamcorper morbi tincidunt ornare massa eget egestas. Mi eget mauris pharetra et ultrices neque. Sit amet porttitor eget dolor
-        morbi non arcu risus quis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Diam vel quam elementum pulvinar. Enim
-        nulla aliquet porttitor lacus luctus accumsan. Convallis tellus id interdum velit laoreet id donec ultrices. Dui faucibus in ornare
-				quam viverra orci sagittis.
-				
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      	Eget dolor morbi non arcu risus quis varius. Turpis tincidunt id aliquet risus feugiat in ante. Eros donec ac odio tempor orci
-        dapibus ultrices in iaculis. Sit amet justo donec enim diam vulputate ut. Morbi blandit cursus risus at ultrices mi tempus. Sed
-        ullamcorper morbi tincidunt ornare massa eget egestas. Mi eget mauris pharetra et ultrices neque. Sit amet porttitor eget dolor
-        morbi non arcu risus quis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Diam vel quam elementum pulvinar. Enim
-        nulla aliquet porttitor lacus luctus accumsan. Convallis tellus id interdum velit laoreet id donec ultrices. Dui faucibus in ornare
-				quam viverra orci sagittis.
-				
-			</p>
-		</div>
-	</Panel1>
-	<Panel2>
-		<div>
-			<DataGrid/>
-			<p>
-				Eget dolor morbi non arcu risus quis varius. Turpis tincidunt id aliquet risus feugiat in ante. Eros donec ac odio tempor orci
-				dapibus ultrices in iaculis. Sit amet justo donec enim diam vulputate ut. Morbi blandit cursus risus at ultrices mi tempus. Sed
-			</p>
-		</div>
-	</Panel2>
-</FluentSplitter>
+					Eget dolor morbi non arcu risus quis varius. Turpis tincidunt id aliquet risus feugiat in ante. Eros donec ac odio tempor orci
+					dapibus ultrices in iaculis. Sit amet justo donec enim diam vulputate ut. Morbi blandit cursus risus at ultrices mi tempus. Sed
+					ullamcorper morbi tincidunt ornare massa eget egestas. Mi eget mauris pharetra et ultrices neque. Sit amet porttitor eget dolor
+					morbi non arcu risus quis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Diam vel quam elementum pulvinar. Enim
+					nulla aliquet porttitor lacus luctus accumsan. Convallis tellus id interdum velit laoreet id donec ultrices. Dui faucibus in ornare
+					quam viverra orci sagittis.
+				</p>
+			</div>
+		</Panel1>
+		<Panel2>
+			<div>
+				<DataGrid/>
+				<p>
+					Eget dolor morbi non arcu risus quis varius. Turpis tincidunt id aliquet risus feugiat in ante. Eros donec ac odio tempor orci
+					dapibus ultrices in iaculis. Sit amet justo donec enim diam vulputate ut. Morbi blandit cursus risus at ultrices mi tempus. Sed
+				</p>
+			</div>
+		</Panel2>
+	</FluentSplitter>
+	</div>
 
 @code {
+
+	[CascadingParameter(Name="Collapse")] bool Collapse { get; set; }
 
 	private bool _collapse = false;
 }

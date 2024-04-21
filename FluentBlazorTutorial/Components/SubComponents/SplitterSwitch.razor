@@ -1,0 +1,17 @@
+@rendermode InteractiveServer
+
+<FluentSwitch CheckedMessage="Collapse" UncheckedMessage="Split" Value="Collapse" ValueChanged="CollapseChanged"/>
+
+@code {
+  //[CascadingParameter(Name="Collapse")] public bool Collapse { get; set; }
+
+  [Parameter] public bool Collapse { get; set; }
+  [Parameter] public EventCallback<bool> CollapseChanged { get; set; }
+
+  private async Task UpdateCollapseStatus(bool value)
+  {
+    Collapse = value;
+    await CollapseChanged.InvokeAsync(value);
+  }
+
+}

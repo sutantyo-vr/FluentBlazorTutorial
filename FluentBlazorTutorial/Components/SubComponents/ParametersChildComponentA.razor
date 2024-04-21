@@ -1,0 +1,20 @@
+@rendermode InteractiveServer
+
+<h5>ParametersSubcomponentA</h5>
+
+<p>Collapse is @CollapseStatus</p>
+
+<FluentSwitch CheckedMessage="Collapse" UncheckedMessage="Split" Value="CollapseStatus" ValueChanged="UpdateCollapseStatus"/>
+
+
+@code {
+
+  [Parameter] public bool CollapseStatus { get; set; }
+  [Parameter] public EventCallback<bool> CollapseStatusChanged { get; set; }
+  
+  private async Task UpdateCollapseStatus(bool value)
+  {
+    CollapseStatus = value;
+    await CollapseStatusChanged.InvokeAsync(value);
+  }
+}
